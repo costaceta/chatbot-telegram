@@ -1,6 +1,13 @@
-var regex = new RegExp('abc');
+/**
+ * Regular expressions
+ */
+var regex = new RegExp("abc");
+var regex2 = /abc/;
 
-var regex2 = /abc/
+// console.log(/[0-9]/.test("eu tenho 35 anos"));
+// console.log( /[a-z]/.test("ano") );
+// console.log(/[^a]/.test("aa"))
 
-console.log( /abc/.test('abcsasasasa') );
-
+// var cartoonCrying = /boo+(hoo+)+/i;
+// console.log( cartoonCrying.test("Boohoooohoohooo") );
+// → true
