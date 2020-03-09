@@ -16,21 +16,19 @@ bot.start(async ctx => {
   await ctx.reply(`Seja bem-vindo ${ctx.update.message.from.first_name}`);
   await ctx.reply(
     `Gostaria de saber mais sobre o método Cis?`,
-    Markup.keyboard(["Sim", "Não"])
+    Markup.keyboard(["Coca", "Pepsi"])
       .oneTime()
       .extra()
   );
 });
 
-bot.hears(["Sim", "Não"], async ctx => {
-  console.log(ctx.match);
-  if (ctx.math == "Sim") {
-    await ctx.reply(`Muito bom!`);
-  }
+bot.hears(["Coca", "Pepsi"], async ctx => {
+  await ctx.reply(`$Nossa! Eu também gosto de ${ctx.match}`);
+  await ctx.reply(`Qual a sua carne predileta`, tecladoCarne);
 });
 
-bot.hears("Peixe", async ctx => {
-  await ctx.reply("Você é um: 🐟");
-});
+bot.hears("Cis teste", ctx => ctx.reply("Legal eu gosto dessa também!"));
+bot.hears("Cis teste1", ctx => ctx.reply("Muito bom esse é o meu preferido!"));
+bot.on("text", ctx => ctx.reply("Legal!"));
 
 bot.startPolling();
